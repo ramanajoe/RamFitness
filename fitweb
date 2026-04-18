@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAM Fitness — Transform Your Body the Healthy Way</title>
+<meta name="description" content="RAM Fitness — Professional Gym Trainer & Dietician in Hyderabad. Strength Training, Fat Loss, Healthy Weight Gain & Body Transformation. Book your slot today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #E31010;
+    --red-dark: #A80C0C;
+    --red-light: #FF2929;
+    --black: #0A0A0A;
+    --black-2: #111111;
+    --black-3: #1A1A1A;
+    --black-4: #222222;
+    --gray: #2E2E2E;
+    --gray-mid: #555555;
+    --gray-light: #888888;
+    --white: #FFFFFF;
+    --white-dim: #F0F0F0;
+    --white-muted: #CCCCCC;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(227,16,16,0.2);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--red); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-condensed);
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--white-muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red); color: var(--white) !important;
+    padding: 8px 20px; border-radius: 2px;
+  }
+  .nav-cta:hover { background: var(--red-light) !important; color: var(--white) !important; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 80px 5% 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A0000 50%, #0A0A0A 100%);
+  }
+  .hero-grid-overlay {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(227,16,16,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(227,16,16,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-accent {
+    position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(227,16,16,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 780px; }
+  .hero-badge {
+    display: inline-block;
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); border: 1px solid var(--red);
+    padding: 6px 16px; margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero-title .line-red { color: var(--red); display: block; }
+  .hero-sub {
+    font-size: 18px; font-weight: 300; color: var(--white-muted);
+    margin: 1.5rem 0 2.5rem; line-height: 1.7; max-width: 520px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--red); color: var(--white);
+    font-family: var(--font-condensed); font-size: 15px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+    padding: 14px 32px; border-radius: 2px; border: 2px solid var(--red);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--red-light); border-color: var(--red-light); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--white);
+    font-family: var(--font-condensed); font-size: 15px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+    padding: 14px 32px; border-radius: 2px; border: 2px solid rgba(255,255,255,0.3);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--white); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: var(--font-display); font-size: 48px;
+    color: var(--white); line-height: 1;
+  }
+  .stat-num span { color: var(--red); }
+  .stat-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light); margin-top: 4px; }
+
+  .hero-right {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 1rem; z-index: 2;
+    animation: fadeLeft 0.8s 0.5s ease both;
+  }
+  .specialty-tag {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(227,16,16,0.3);
+    padding: 12px 20px; border-radius: 2px;
+    font-family: var(--font-condensed); font-size: 14px;
+    font-weight: 600; letter-spacing: 1px; color: var(--white-muted);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .specialty-tag::before {
+    content: ''; width: 8px; height: 8px;
+    background: var(--red); border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 100px 5%; }
+  .section-label {
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--red);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(40px, 5vw, 68px);
+    text-transform: uppercase; line-height: 1; margin-bottom: 1.5rem;
+  }
+  .section-sub { font-size: 17px; font-weight: 300; color: var(--white-muted); line-height: 1.8; max-width: 560px; }
+  .divider { width: 60px; height: 3px; background: var(--red); margin-bottom: 2rem; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--black-2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
+  .about-visual {
+    position: relative;
+    background: var(--black-3);
+    border: 1px solid rgba(227,16,16,0.2);
+    border-radius: 4px;
+    min-height: 480px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .about-visual-inner { text-align: center; padding: 3rem; }
+  .about-icon-big {
+    font-family: var(--font-display);
+    font-size: 120px; line-height: 1;
+    color: rgba(227,16,16,0.15);
+    display: block;
+  }
+  .about-name-card {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: var(--red); padding: 1.5rem 2rem;
+  }
+  .about-name { font-family: var(--font-display); font-size: 32px; letter-spacing: 2px; }
+  .about-title-tag { font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+  .about-experience {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: var(--black); border: 2px solid var(--red);
+    padding: 16px; text-align: center; border-radius: 2px;
+  }
+  .exp-num { font-family: var(--font-display); font-size: 42px; color: var(--red); line-height: 1; }
+  .exp-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--white-muted); }
+  .about-text p { color: var(--white-muted); font-size: 17px; line-height: 1.8; margin-bottom: 1.5rem; }
+  .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .pillar {
+    background: var(--black-3); border: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid var(--red);
+    padding: 1rem 1.25rem; border-radius: 2px;
+  }
+  .pillar strong { font-family: var(--font-condensed); font-size: 15px; font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+  .pillar span { font-size: 13px; color: var(--gray-light); }
+
+  /* ── SERVICES ── */
+  #services { background: var(--black); }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: rgba(227,16,16,0.15); border: 1px solid rgba(227,16,16,0.15); }
+  .service-card {
+    background: var(--black-2);
+    padding: 2.5rem 2rem;
+    cursor: pointer; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card:hover { background: var(--black-3); transform: translateY(-4px); }
+  .service-card:hover .service-icon { color: var(--red); }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--red); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    font-size: 36px; margin-bottom: 1.5rem; display: block;
+    transition: color 0.3s; color: var(--white-muted);
+    font-family: var(--font-display); line-height: 1;
+  }
+  .service-num {
+    font-family: var(--font-display); font-size: 13px;
+    letter-spacing: 3px; color: var(--red);
+    margin-bottom: 1rem; display: block;
+  }
+  .service-name {
+    font-family: var(--font-condensed); font-size: 22px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 1rem; color: var(--white);
+  }
+  .service-desc { font-size: 14px; color: var(--gray-light); line-height: 1.7; margin-bottom: 1.5rem; }
+  .service-cta {
+    font-family: var(--font-condensed); font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--red);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    cursor: pointer; background: none; border: none;
+    transition: gap 0.2s;
+  }
+  .service-cta:hover { gap: 10px; }
+
+  /* ── CALCULATOR ── */
+  #calculator { background: var(--black-2); }
+  .calc-wrapper {
+    margin-top: 4rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  }
+  .calc-form { }
+  .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .calc-field { display: flex; flex-direction: column; gap: 8px; }
+  .calc-field label {
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light);
+  }
+  .calc-field input, .calc-field select {
+    background: var(--black-3); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); padding: 12px 16px; border-radius: 2px;
+    font-family: var(--font-body); font-size: 15px;
+    transition: border-color 0.2s; outline: none;
+    -webkit-appearance: none;
+  }
+  .calc-field input:focus, .calc-field select:focus { border-color: var(--red); }
+  .calc-field select option { background: var(--black-3); }
+  .calc-full { grid-column: 1/-1; }
+  .calc-btn {
+    width: 100%; margin-top: 1.5rem;
+    background: var(--red); color: var(--white);
+    font-family: var(--font-condensed); font-size: 16px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px; border: none; border-radius: 2px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .calc-btn:hover { background: var(--red-light); }
+  .calc-results { }
+  .result-card {
+    background: var(--black-3); border: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem; border-radius: 2px; margin-bottom: 1rem;
+    position: relative; overflow: hidden;
+    opacity: 0.3; transition: opacity 0.4s;
+  }
+  .result-card.active { opacity: 1; border-left: 3px solid var(--red); }
+  .result-card.highlight { background: var(--red); border-color: var(--red); }
+  .result-label {
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray-light); margin-bottom: 8px;
+  }
+  .result-card.highlight .result-label { color: rgba(255,255,255,0.7); }
+  .result-value {
+    font-family: var(--font-display); font-size: 52px; line-height: 1;
+    color: var(--white);
+  }
+  .result-unit { font-size: 18px; margin-left: 4px; opacity: 0.6; }
+  .result-note { font-size: 13px; color: var(--gray-light); margin-top: 6px; }
+  .result-card.highlight .result-note { color: rgba(255,255,255,0.6); }
+  .bmi-display {
+    background: var(--black-4); border: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem; border-radius: 2px; margin-top: 1rem; text-align: center;
+    opacity: 0.3; transition: opacity 0.4s;
+  }
+  .bmi-display.active { opacity: 1; }
+  .bmi-val { font-family: var(--font-display); font-size: 36px; color: var(--red); }
+  .bmi-label { font-size: 13px; color: var(--gray-light); margin-top: 4px; }
+
+  /* ── BOOKING ── */
+  #booking { background: var(--black); }
+  .booking-wrapper {
+    margin-top: 4rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  }
+  .booking-info { }
+  .booking-info h3 {
+    font-family: var(--font-display); font-size: 36px;
+    margin-bottom: 1.5rem; text-transform: uppercase;
+  }
+  .booking-info p { color: var(--white-muted); font-size: 16px; line-height: 1.8; margin-bottom: 2rem; }
+  .booking-features { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .booking-features li {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 15px; color: var(--white-muted);
+  }
+  .booking-features li::before {
+    content: ''; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--red); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .booking-form-box {
+    background: var(--black-2); border: 1px solid rgba(255,255,255,0.07);
+    padding: 2.5rem; border-radius: 4px;
+  }
+  .form-title {
+    font-family: var(--font-condensed); font-size: 22px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1rem; }
+  .form-field label {
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light);
+  }
+  .form-field input, .form-field select, .form-field textarea {
+    background: var(--black-3); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white); padding: 12px 16px; border-radius: 2px;
+    font-family: var(--font-body); font-size: 15px;
+    transition: border-color 0.2s; outline: none;
+    -webkit-appearance: none;
+  }
+  .form-field textarea { min-height: 80px; resize: vertical; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--red); }
+  .form-field select option { background: var(--black-3); }
+  .time-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .time-slot {
+    background: var(--black-4); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white-muted); padding: 10px 8px; border-radius: 2px;
+    font-family: var(--font-condensed); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.5px; text-align: center; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .time-slot:hover, .time-slot.selected { background: var(--red); border-color: var(--red); color: var(--white); }
+  .form-submit {
+    width: 100%; margin-top: 1.5rem;
+    background: var(--red); color: var(--white);
+    font-family: var(--font-condensed); font-size: 16px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 16px; border: none; border-radius: 2px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--red-light); }
+
+  /* ── TRANSFORMATIONS ── */
+  #transformations { background: var(--black-2); }
+  .trans-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+  .trans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .trans-card {
+    background: var(--black-3); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px; overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .trans-card:hover { transform: translateY(-6px); border-color: rgba(227,16,16,0.3); }
+  .trans-before-after {
+    display: grid; grid-template-columns: 1fr 1fr;
+    height: 220px; position: relative;
+  }
+  .trans-side {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .trans-side.before { background: linear-gradient(135deg, #1a1a1a, #222); }
+  .trans-side.after { background: linear-gradient(135deg, #1a0000, #2a0000); }
+  .trans-label-ba {
+    position: absolute; top: 10px; left: 10px;
+    font-family: var(--font-condensed); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 2px;
+  }
+  .trans-label-ba.before-label { background: rgba(255,255,255,0.15); color: var(--white); }
+  .trans-label-ba.after-label { background: var(--red); color: var(--white); }
+  .trans-divider-line {
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 2px; background: var(--white); z-index: 10;
+  }
+  .trans-figure {
+    font-family: var(--font-display); font-size: 64px; opacity: 0.12; user-select: none;
+  }
+  .trans-info { padding: 1.5rem; }
+  .trans-name { font-family: var(--font-condensed); font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .trans-result { font-size: 13px; color: var(--red); font-weight: 600; margin-bottom: 10px; }
+  .trans-quote { font-size: 14px; color: var(--gray-light); line-height: 1.6; font-style: italic; }
+  .stars { color: var(--red); font-size: 14px; margin-top: 10px; letter-spacing: 2px; }
+
+  /* ── BLOG / TIPS ── */
+  #blog { background: var(--black); }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem; }
+  .blog-card {
+    background: var(--black-2); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px; overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s; cursor: pointer;
+  }
+  .blog-card:hover { transform: translateY(-4px); border-color: rgba(227,16,16,0.3); }
+  .blog-thumb {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 80px;
+    position: relative; overflow: hidden;
+  }
+  .blog-thumb.t1 { background: linear-gradient(135deg, #1a0000, #2d0000); }
+  .blog-thumb.t2 { background: linear-gradient(135deg, #0a1a00, #0d2800); }
+  .blog-thumb.t3 { background: linear-gradient(135deg, #00001a, #00002d); }
+  .blog-thumb.t4 { background: linear-gradient(135deg, #1a1000, #2d1a00); }
+  .blog-thumb-icon { opacity: 0.25; font-size: 70px; }
+  .blog-category {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--red); color: var(--white);
+    font-family: var(--font-condensed); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 2px;
+  }
+  .blog-body { padding: 1.5rem; }
+  .blog-title { font-family: var(--font-condensed); font-size: 19px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .blog-excerpt { font-size: 14px; color: var(--gray-light); line-height: 1.7; margin-bottom: 1rem; }
+  .blog-meta { display: flex; align-items: center; justify-content: space-between; }
+  .blog-date { font-size: 12px; color: var(--gray-mid); letter-spacing: 1px; }
+  .blog-read { font-family: var(--font-condensed); font-size: 13px; font-weight: 600; letter-spacing: 1px; color: var(--red); text-transform: uppercase; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--black-2); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem;
+  }
+  .contact-icon-box {
+    width: 54px; height: 54px; flex-shrink: 0;
+    background: rgba(227,16,16,0.1); border: 1px solid rgba(227,16,16,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; border-radius: 2px;
+  }
+  .contact-detail h4 { font-family: var(--font-condensed); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-light); margin-bottom: 6px; }
+  .contact-detail p, .contact-detail a { font-size: 18px; font-weight: 500; color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .contact-detail a:hover { color: var(--red); }
+  .contact-cta-box {
+    background: var(--black-3); border: 1px solid rgba(227,16,16,0.2);
+    padding: 2.5rem; border-radius: 4px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .contact-cta-box h3 { font-family: var(--font-display); font-size: 40px; text-transform: uppercase; line-height: 1; margin-bottom: 1rem; }
+  .contact-cta-box h3 span { color: var(--red); }
+  .contact-cta-box p { color: var(--white-muted); font-size: 16px; line-height: 1.7; margin-bottom: 2rem; }
+  .wa-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    background: #25D366; color: #fff;
+    font-family: var(--font-condensed); font-size: 16px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+    padding: 16px 32px; border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .wa-btn:hover { background: #20BA5A; transform: translateY(-2px); }
+  .wa-icon { font-size: 22px; }
+
+  /* ── FLOATING WHATSAPP ── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; text-decoration: none;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+    animation: pulse-green 2.5s ease infinite;
+    transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); }
+  @keyframes pulse-green {
+    0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 4rem 5% 2rem;
+  }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand .nav-logo { font-size: 36px; display: block; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 14px; color: var(--gray-light); max-width: 280px; line-height: 1.7; }
+  .footer-links h5 {
+    font-family: var(--font-condensed); font-size: 12px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--red);
+    margin-bottom: 1rem;
+  }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 14px; color: var(--gray-light); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    font-size: 13px; color: var(--gray-mid);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translate(40px, -50%); }
+    to { opacity: 1; transform: translate(0, -50%); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--black); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; z-index: 999; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 18px; }
+    .nav-toggle { display: flex; }
+    .hero-right { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    .stat-num { font-size: 36px; }
+    section { padding: 70px 5%; }
+    .about-grid, .calc-wrapper, .booking-wrapper, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .calc-row, .form-row { grid-template-columns: 1fr; }
+    .about-visual { min-height: 300px; }
+    .hero-right { display: none; }
+    .services-header { flex-direction: column; }
+    .about-pillars { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">RAM<span>.</span>FIT</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#blog">Tips</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollToForm()" class="nav-cta">Book Slot</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content">
+    <span class="hero-badge">&#9632; Professional Gym Trainer & Dietician</span>
+    <h1 class="hero-title">
+      Transform<br>
+      Your Body<br>
+      <span class="line-red">The Healthy Way</span>
+    </h1>
+    <p class="hero-sub">No shortcuts. No fake promises. Just science-backed training and nutrition built around your body, your goals, your life.</p>
+    <div class="hero-buttons">
+      <a href="javascript:void(0)" onclick="scrollToForm()" class="btn-primary">&#9654; Book a Slot</a>
+      <a href="https://wa.me/919704459484?text=Hi%20Ram%2C%20I%20want%20a%20customized%20Diet%20Plan" class="btn-outline" target="_blank">&#9656; Get Diet Plan</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4<span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-label">Clients Transformed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98<span>%</span></div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="specialty-tag">Strength Training</div>
+    <div class="specialty-tag">Fat Loss Specialist</div>
+    <div class="specialty-tag">Healthy Weight Gain</div>
+    <div class="specialty-tag">Body Transformation</div>
+    <div class="specialty-tag">Nutrition Planning</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-visual-inner">
+        <span class="about-icon-big">RAM</span>
+        <div style="margin-top: 1rem;">
+          <div style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap;">
+            <span style="background:rgba(227,16,16,0.15); border:1px solid rgba(227,16,16,0.3); padding:6px 14px; font-family:var(--font-condensed); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red);">NSCA Certified</span>
+            <span style="background:rgba(227,16,16,0.15); border:1px solid rgba(227,16,16,0.3); padding:6px 14px; font-family:var(--font-condensed); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red);">Certified Dietician</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-experience">
+        <div class="exp-num">4+</div>
+        <div class="exp-label">Yrs Exp</div>
+      </div>
+      <div class="about-name-card">
+        <div class="about-name">RAM FITNESS</div>
+        <div class="about-title-tag">Gym Trainer & Dietician</div>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Built on<br><span style="color:var(--red)">Real Results</span></h2>
+      <div class="divider"></div>
+      <p>I'm RAM — a certified gym trainer and dietician with 4+ years of experience transforming bodies and changing lives. My approach is rooted in science, personalized to each individual, and built around sustainable habits — not crash diets or unsafe shortcuts.</p>
+      <p>Whether you want to lose fat, build muscle, or completely transform your physique, I build a strategy around your body type, lifestyle, and goals — and I walk with you every step of the way.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <strong>Nutrition Planning</strong>
+          <span>Customized meal plans built around your lifestyle</span>
+        </div>
+        <div class="pillar">
+          <strong>Workout Programming</strong>
+          <span>Periodized training for maximum progress</span>
+        </div>
+        <div class="pillar">
+          <strong>Sustainable Fat Loss</strong>
+          <span>Lose fat, not muscle — the right way</span>
+        </div>
+        <div class="pillar">
+          <strong>Natural Transformation</strong>
+          <span>No steroids, no fake promises, just results</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">My <span style="color:var(--red)">Services</span></h2>
+      <div class="divider"></div>
+    </div>
+    <p class="section-sub">Every program is built specifically for you — your body, your schedule, your goals.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <span class="service-icon">&#9996;</span>
+      <div class="service-name">Online Coaching</div>
+      <p class="service-desc">Train from anywhere with customized workout plans, weekly check-ins, video reviews, and dedicated WhatsApp support.</p>
+      <button class="service-cta" onclick="window.open('https://wa.me/919704459484?text=Hi%20Ram%2C%20I%20want%20to%20know%20more%20about%20Online%20Coaching','_blank')">Enquire &#8594;</button>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <span class="service-icon">&#9660;</span>
+      <div class="service-name">Fat Loss Programs</div>
+      <p class="service-desc">A science-backed approach to shedding body fat while preserving muscle. Calorie protocols, training cycles, and accountability that actually works.</p>
+      <button class="service-cta" onclick="scrollToForm()">Start Now &#8594;</button>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <span class="service-icon">&#9650;</span>
+      <div class="service-name">Weight Gain Programs</div>
+      <p class="service-desc">Healthy, lean mass building with structured nutrition surplus, progressive training, and regular monitoring — no dirty bulking.</p>
+      <button class="service-cta" onclick="scrollToForm()">Start Now &#8594;</button>
+    </div>
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <span class="service-icon">&#9670;</span>
+      <div class="service-name">Customized Diet Plans</div>
+      <p class="service-desc">Personalized meal plans based on your body metrics, food preferences, and goals. Practical, delicious, and easy to follow.</p>
+      <button class="service-cta" onclick="window.open('https://wa.me/919704459484?text=Hi%20Ram%2C%20I%20want%20a%20customized%20Diet%20Plan','_blank')">Get Plan &#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- CALORIE CALCULATOR -->
+<section id="calculator">
+  <div class="section-label">Free Tool</div>
+  <h2 class="section-title">Daily Calories<br><span style="color:var(--red)">Calculator</span></h2>
+  <div class="divider"></div>
+  <p class="section-sub">Find your maintenance calories instantly — then we'll build the right plan to reach your goal.</p>
+  <div class="calc-wrapper reveal">
+    <div class="calc-form">
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Age</label>
+          <input type="number" id="calc-age" placeholder="e.g. 25" min="10" max="80">
+        </div>
+        <div class="calc-field">
+          <label>Gender</label>
+          <select id="calc-gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Height (cm)</label>
+          <input type="number" id="calc-height" placeholder="e.g. 175" min="100" max="230">
+        </div>
+        <div class="calc-field">
+          <label>Weight (kg)</label>
+          <input type="number" id="calc-weight" placeholder="e.g. 70" min="30" max="250">
+        </div>
+      </div>
+      <div class="calc-row calc-full">
+        <div class="calc-field calc-full">
+          <label>Activity Level</label>
+          <select id="calc-activity">
+            <option value="">Select your level</option>
+            <option value="1.2">Sedentary (desk job, little exercise)</option>
+            <option value="1.375">Lightly Active (1-3 days/week)</option>
+            <option value="1.55">Moderately Active (3-5 days/week)</option>
+            <option value="1.725">Very Active (6-7 days/week)</option>
+            <option value="1.9">Athlete (2x/day training)</option>
+          </select>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calculateCalories()">Calculate My Calories</button>
+      <p style="font-size:13px; color:var(--gray-light); margin-top:1rem; text-align:center;">Based on Mifflin-St Jeor equation — the most accurate TDEE formula</p>
+    </div>
+    <div class="calc-results">
+      <div class="result-card" id="res-maintain">
+        <div class="result-label">&#9632; Maintenance Calories</div>
+        <div class="result-value"><span id="v-maintain">—</span><span class="result-unit">kcal</span></div>
+        <div class="result-note">Calories to maintain your current weight</div>
+      </div>
+      <div class="result-card highlight" id="res-loss">
+        <div class="result-label">&#9660; Fat Loss Target</div>
+        <div class="result-value"><span id="v-loss">—</span><span class="result-unit">kcal</span></div>
+        <div class="result-note">500 kcal deficit — safe &amp; sustainable fat loss</div>
+      </div>
+      <div class="result-card" id="res-gain">
+        <div class="result-label">&#9650; Weight Gain Target</div>
+        <div class="result-value"><span id="v-gain">—</span><span class="result-unit">kcal</span></div>
+        <div class="result-note">300 kcal surplus — lean muscle gain</div>
+      </div>
+      <div class="bmi-display" id="bmi-box">
+        <div style="font-family:var(--font-condensed); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray-light); margin-bottom:8px;">Your BMI</div>
+        <div class="bmi-val" id="bmi-val">—</div>
+        <div class="bmi-label" id="bmi-label">Enter your details to calculate</div>
+      </div>
+      <div style="margin-top:1rem;">
+        <a id="calc-wa-btn" href="#" target="_blank" class="btn-primary" style="display:none; width:100%; justify-content:center; text-decoration:none;">
+          &#128172; Get My Custom Plan on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-label">Reserve Your Spot</div>
+  <div class="booking-wrapper">
+    <div class="booking-info reveal">
+      <h2 class="section-title">Book Your<br><span style="color:var(--red)">Free Slot</span></h2>
+      <div class="divider"></div>
+      <p>Take the first step. Fill the form and I'll personally reach out to plan your transformation journey. First consultation is always free.</p>
+      <ul class="booking-features">
+        <li>Free 30-min consultation call</li>
+        <li>Personalized goal assessment</li>
+        <li>Customized plan overview</li>
+        <li>Diet & training roadmap</li>
+        <li>No commitment required</li>
+      </ul>
+      <div style="margin-top:3rem; padding:2rem; background:rgba(227,16,16,0.08); border:1px solid rgba(227,16,16,0.2); border-radius:4px;">
+        <div style="font-family:var(--font-condensed); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--red); margin-bottom:12px;">Available Timings</div>
+        <div style="font-size:15px; color:var(--white-muted); line-height:2;">
+          Mon – Fri: 10:00 AM – 8:00 PM<br>
+          Sat: 10:00 AM – 10:00 PM<br>
+          Sun: 10:00 AM – 10:00 PM
+        </div>
+      </div>
+    </div>
+    <div class="booking-form-box reveal" id="booking-form">
+      <div class="form-title">Fill Your Details</div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Full Name *</label>
+          <input type="text" id="f-name" placeholder="Your name">
+        </div>
+        <div class="form-field">
+          <label>Phone Number *</label>
+          <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Your Goal *</label>
+        <select id="f-goal">
+          <option value="">Select your goal</option>
+          <option value="Fat Loss">Fat Loss</option>
+          <option value="Healthy Weight Gain">Healthy Weight Gain</option>
+          <option value="Strength Training">Strength Training</option>
+          <option value="Body Transformation">Body Transformation</option>
+          <option value="Online Coaching">Online Coaching</option>
+          <option value="Diet Plan Only">Diet Plan Only</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Preferred Date *</label>
+        <input type="date" id="f-date">
+      </div>
+      <div class="form-field">
+        <label>Preferred Time Slot *</label>
+        <div class="time-slots" id="timeSlots">
+          <div class="time-slot" onclick="selectSlot(this, '6:00 AM')">6:00 AM</div>
+          <div class="time-slot" onclick="selectSlot(this, '7:00 AM')">7:00 AM</div>
+          <div class="time-slot" onclick="selectSlot(this, '8:00 AM')">8:00 AM</div>
+          <div class="time-slot" onclick="selectSlot(this, '10:00 AM')">10:00 AM</div>
+          <div class="time-slot" onclick="selectSlot(this, '12:00 PM')">12:00 PM</div>
+          <div class="time-slot" onclick="selectSlot(this, '2:00 PM')">2:00 PM</div>
+          <div class="time-slot" onclick="selectSlot(this, '5:00 PM')">5:00 PM</div>
+          <div class="time-slot" onclick="selectSlot(this, '6:00 PM')">6:00 PM</div>
+          <div class="time-slot" onclick="selectSlot(this, '7:00 PM')">7:00 PM</div>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Additional Note (Optional)</label>
+        <textarea id="f-note" placeholder="Any specific concern or question..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitBooking()">
+        <span>&#128172;</span> Confirm Booking via WhatsApp
+      </button>
+      <p style="font-size:12px; color:var(--gray-mid); text-align:center; margin-top:1rem;">You'll be redirected to WhatsApp with a pre-filled message</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG / TIPS -->
+<section id="blog">
+  <div class="section-label">Knowledge Is Power</div>
+  <h2 class="section-title">Fitness <span style="color:var(--red)">Tips & Insights</span></h2>
+  <div class="divider"></div>
+  <p class="section-sub">Free knowledge to help you make better decisions about your body — no fluff, no myths.</p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,480px)); gap:2.5rem; justify-content:center; margin-top:3rem;" class="reveal">
+
+    <!-- Reel 1 -->
+    <div style="background:var(--black-2); border:1px solid rgba(227,16,16,0.2); border-radius:8px; overflow:hidden; transition:transform 0.3s,border-color 0.3s;"
+      onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(227,16,16,0.5)'"
+      onmouseout="this.style.transform='';this.style.borderColor='rgba(227,16,16,0.2)'">
+      <div style="position:relative; padding-bottom:177.77%; height:0; overflow:hidden;">
+        <iframe src="https://www.instagram.com/reel/DVgW8Zzk6Le/embed/?cr=1&v=14&wp=480"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          allowfullscreen scrolling="no" allowtransparency="true"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div style="padding:1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+        <div>
+          <div style="font-family:var(--font-condensed); font-size:15px; font-weight:700; letter-spacing:1px; color:var(--white); margin-bottom:4px;">RAM Fitness Tip</div>
+          <div style="font-size:12px; color:var(--gray-light);">@x_fitram_09 on Instagram</div>
+        </div>
+        <a href="https://www.instagram.com/reel/DVgW8Zzk6Le/?igsh=MW10anBjcTQwb2xkYw==" target="_blank"
+          style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; font-family:var(--font-condensed); font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; text-decoration:none; padding:9px 18px; border-radius:4px; white-space:nowrap; flex-shrink:0;">
+          View on IG
+        </a>
+      </div>
+    </div>
+
+    <!-- Reel 2 -->
+    <div style="background:var(--black-2); border:1px solid rgba(227,16,16,0.2); border-radius:8px; overflow:hidden; transition:transform 0.3s,border-color 0.3s;"
+      onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(227,16,16,0.5)'"
+      onmouseout="this.style.transform='';this.style.borderColor='rgba(227,16,16,0.2)'">
+      <div style="position:relative; padding-bottom:177.77%; height:0; overflow:hidden;">
+        <iframe src="https://www.instagram.com/reel/DVbHhXpE0d7/embed/?cr=1&v=14&wp=480"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          allowfullscreen scrolling="no" allowtransparency="true"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div style="padding:1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;">
+        <div>
+          <div style="font-family:var(--font-condensed); font-size:15px; font-weight:700; letter-spacing:1px; color:var(--white); margin-bottom:4px;">RAM Fitness Tip</div>
+          <div style="font-size:12px; color:var(--gray-light);">@x_fitram_09 on Instagram</div>
+        </div>
+        <a href="https://www.instagram.com/reel/DVbHhXpE0d7/?igsh=MXA0NGlvYXR2ZHd0Mg==" target="_blank"
+          style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; font-family:var(--font-condensed); font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; text-decoration:none; padding:9px 18px; border-radius:4px; white-space:nowrap; flex-shrink:0;">
+          View on IG
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="https://www.instagram.com/x_fitram_09" target="_blank" class="btn-outline" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Follow @x_fitram_09 on Instagram
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Contact <span style="color:var(--red)">RAM Fitness</span></h2>
+  <div class="divider"></div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-item">
+        <div class="contact-icon-box">&#128222;</div>
+        <div class="contact-detail">
+          <h4>Phone</h4>
+          <a href="tel:+919704459484">+91 97044 59484</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">&#128172;</div>
+        <div class="contact-detail">
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/919704459484" target="_blank">+91 97044 59484</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">&#9993;</div>
+        <div class="contact-detail">
+          <h4>Email</h4>
+          <a href="mailto:ramfitness419@gmail.com">ramfitness419@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E31010" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <div class="contact-detail">
+          <h4>Instagram</h4>
+          <a href="https://www.instagram.com/x_fitram_09" target="_blank">@x_fitram_09</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">&#128205;</div>
+        <div class="contact-detail">
+          <h4>Location</h4>
+          <p>Hyderabad, Telangana</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-cta-box reveal">
+      <div>
+        <h3>Ready to <span>Start?</span></h3>
+        <p>Message me directly on WhatsApp and let's have a quick conversation about your goals. No forms, no waiting — just a real human who cares about your transformation.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <a href="https://wa.me/919704459484?text=Hi%20Ram%2C%20I%20want%20to%20start%20my%20fitness%20journey" target="_blank" class="wa-btn">
+          <span class="wa-icon">&#128172;</span> Chat on WhatsApp
+        </a>
+        <a href="javascript:void(0)" onclick="scrollToForm()" class="btn-outline" style="justify-content:center; text-align:center;">Book a Free Slot</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo">RAM<span style="color:var(--red)">.</span>FIT</a>
+      <p>Professional Gym Trainer & Dietician helping people transform their bodies the healthy, sustainable way — one client at a time.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#calculator">Calorie Calculator</a></li>
+        <li><a href="#blog">Tips & Reels</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToForm()">Book a Slot</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="#services">Online Coaching</a></li>
+        <li><a href="#services">Fat Loss Program</a></li>
+        <li><a href="#services">Weight Gain Program</a></li>
+        <li><a href="#services">Diet Planning</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+919704459484">+91 97044 59484</a></li>
+        <li><a href="mailto:ramfitness419@gmail.com">ramfitness419@gmail.com</a></li>
+        <li><a href="https://wa.me/919704459484" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/x_fitram_09" target="_blank">@x_fitram_09</a></li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RAM Fitness. All rights reserved.</span>
+    <span>Hyderabad, Telangana — Built with 💪</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919704459484?text=Hi%20Ram%2C%20I%20want%20to%20know%20more%20about%20your%20fitness%20programs" target="_blank" class="wa-float" title="Chat on WhatsApp">&#128172;</a>
+
+<script>
+  // SCROLL TO FORM — accounts for fixed 64px nav bar
+  function scrollToForm() {
+    const formEl = document.getElementById('booking-form');
+    if (!formEl) return;
+    const navHeight = 64;
+    const top = formEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+    // close mobile nav if open
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // NAV TOGGLE
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // TIME SLOT SELECTION
+  let selectedSlot = '';
+  function selectSlot(el, time) {
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedSlot = time;
+  }
+
+  // BOOKING SUBMIT → WHATSAPP
+  function submitBooking() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const goal = document.getElementById('f-goal').value;
+    const date = document.getElementById('f-date').value;
+    const note = document.getElementById('f-note').value.trim();
+
+    if (!name || !phone || !goal || !date || !selectedSlot) {
+      alert('Please fill in all required fields and select a time slot.');
+      return;
+    }
+
+    const formattedDate = new Date(date).toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    const message = `Hi Ram, I have booked a slot.
+
+Name: ${name}
+Phone: ${phone}
+Goal: ${goal}
+Date: ${formattedDate}
+Time: ${selectedSlot}${note ? '\nNote: ' + note : ''}
+
+Please confirm my slot. Thank you!`;
+
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/919704459484?text=${encoded}`, '_blank');
+  }
+
+  // CALORIE CALCULATOR
+  function calculateCalories() {
+    const age = parseFloat(document.getElementById('calc-age').value);
+    const gender = document.getElementById('calc-gender').value;
+    const height = parseFloat(document.getElementById('calc-height').value);
+    const weight = parseFloat(document.getElementById('calc-weight').value);
+    const activity = parseFloat(document.getElementById('calc-activity').value);
+
+    if (!age || !gender || !height || !weight || !activity) {
+      alert('Please fill in all fields to calculate your calories.');
+      return;
+    }
+
+    // Mifflin-St Jeor
+    let bmr;
+    if (gender === 'male') {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+
+    const tdee = Math.round(bmr * activity);
+    const fatLoss = Math.round(tdee - 500);
+    const weightGain = Math.round(tdee + 300);
+
+    // BMI
+    const heightM = height / 100;
+    const bmi = (weight / (heightM * heightM)).toFixed(1);
+    let bmiLabel = '';
+    if (bmi < 18.5) bmiLabel = 'Underweight';
+    else if (bmi < 24.9) bmiLabel = 'Normal weight';
+    else if (bmi < 29.9) bmiLabel = 'Overweight';
+    else bmiLabel = 'Obese';
+
+    document.getElementById('v-maintain').textContent = tdee.toLocaleString();
+    document.getElementById('v-loss').textContent = fatLoss.toLocaleString();
+    document.getElementById('v-gain').textContent = weightGain.toLocaleString();
+    document.getElementById('bmi-val').textContent = bmi;
+    document.getElementById('bmi-label').textContent = `BMI: ${bmiLabel}`;
+
+    ['res-maintain', 'res-loss', 'res-gain'].forEach(id => {
+      document.getElementById(id).classList.add('active');
+    });
+    document.getElementById('bmi-box').classList.add('active');
+
+    // WA button
+    const waBtn = document.getElementById('calc-wa-btn');
+    waBtn.style.display = 'flex';
+    const msg = `Hi Ram, I calculated my calories using your website.%0A%0AAge: ${age} | Gender: ${gender} | Height: ${height}cm | Weight: ${weight}kg%0AMaintenance: ${tdee} kcal%0AFat Loss: ${fatLoss} kcal%0AWeight Gain: ${weightGain} kcal%0ABMI: ${bmi} (${bmiLabel})%0A%0ACan you help me with a custom plan?`;
+    waBtn.href = `https://wa.me/919704459484?text=${msg}`;
+  }
+
+  // Set min date for booking to today
+  const dateInput = document.getElementById('f-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+</script>
+</body>
+</html>
